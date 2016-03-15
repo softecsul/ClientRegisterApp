@@ -29,5 +29,7 @@ namespace WebApi.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<WebApi.Models.Cliente> Clientes { get; set; }
     }
 }
