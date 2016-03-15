@@ -13,6 +13,7 @@ namespace WebApi.Models
         [Key]
         public int IDCliente { get; set; }
         public string Nome { get; set; }
+        public string Telefone { get; set; }
         //TODO: Possivel Refactoring
         public string Endereco { get; set; }
         [Column(TypeName ="image")]
