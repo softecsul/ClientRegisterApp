@@ -45,7 +45,7 @@ namespace WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != cliente.IDCliente)
+            if (id != cliente.ID)
             {
                 return BadRequest();
             }
@@ -83,7 +83,7 @@ namespace WebApi.Controllers
             db.Clientes.Add(cliente);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = cliente.IDCliente }, cliente);
+            return CreatedAtRoute("DefaultApi", new { id = cliente.ID}, cliente);
         }
 
         // DELETE: api/Clientes/5
@@ -115,7 +115,7 @@ namespace WebApi.Controllers
 
         private bool ClienteExists(int id)
         {
-            return db.Clientes.Count(e => e.IDCliente == id) > 0;
+            return db.Clientes.Count(e => e.ID == id) > 0;
         }
     }
 }
