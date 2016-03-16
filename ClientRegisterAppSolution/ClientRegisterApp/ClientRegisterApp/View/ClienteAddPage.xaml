@@ -4,29 +4,23 @@
              x:Class="ClientRegisterApp.View.ClienteAddPage">
   <ContentPage.Content>
     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-      <Label Text="Adicionar Cliente" Font="20"/>
-      <StackLayout Orientation="Horizontal" Padding="30" >
+      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="20">
+        <Label Text="Adicionar Cliente" Font="20"/>
         <Label>Nome: </Label>
         <Entry Placeholder="Seu nome"></Entry>
-      </StackLayout>
 
-      <StackLayout Orientation="Horizontal" Padding="30">
         <Label>Endereço: </Label>
         <Entry Placeholder="Seu endereço"></Entry>
-      </StackLayout>
 
-      <StackLayout Orientation="Horizontal" Padding="30">
         <Label>Telefone: </Label>
         <Entry Placeholder="Seu telefone" ></Entry>
-      </StackLayout>
 
-      <StackLayout Orientation="Vertical" Padding="30">
-        <Label>Foto: </Label>
-        <Image Source="http://xamarin.com/content/images/pages/forms/example-app.png" />
-        <Button Text="Tirar foto"/>
+        <StackLayout Orientation="Vertical" Padding="30">
+          <Label>Foto: </Label>
+          <Image Source="http://xamarin.com/content/images/pages/forms/example-app.png" />
+          <Button Text="Tirar foto"/>
+        </StackLayout>
       </StackLayout>
-    </StackLayout>
     </ScrollView>
   </ContentPage.Content>
 </ContentPage>

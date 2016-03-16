@@ -1,4 +1,4 @@
-﻿using ClientRegisterApp.Model;
+﻿using ClientRegisterApp.Data.Models;
 using ClientRegisterApp.View;
 using ClientRegisterApp.ViewModel;
 using System;
@@ -17,6 +17,7 @@ namespace ClientRegisterApp
         public MainPage()
         {
             vm = new MainPageViewModel(new Client());
+            vm.GetAllClients();
             BindingContext = vm;
             InitializeComponent();
         }

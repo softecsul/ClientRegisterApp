@@ -1,4 +1,5 @@
-﻿using ClientRegisterApp.Model;
+﻿using ClientRegisterApp.Data.Models;
+using ClientRegisterApp.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,7 +13,7 @@ namespace ClientRegisterApp.ViewModel
     public class MainPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
+        public ClientServiceApi clientServiceApi;
         public MainPageViewModel(Client client)
         {
             ID = client.ID;
@@ -21,13 +22,12 @@ namespace ClientRegisterApp.ViewModel
             Address = client.Address;
             Image = client.Image;
 
-            Clients = new ObservableCollection<Client>
-                {
-                    new Client {ID = 93, Name = "Luís Fernando",Address="Rua Alberto dos Santos, 289, St. Helena", Phone="9937-5963" },
-                    new Client { Name = "John Whatever" },
-                    new Client { Name = "José da Silva" }
+            clientServiceApi = new ClientServiceApi();
+        }
 
-                };
+        public async void GetAllClients()
+        {
+            Clients = new ObservableCollection<Client>(await clientServiceApi.GetAll());
         }
 
         public MainPageViewModel()
