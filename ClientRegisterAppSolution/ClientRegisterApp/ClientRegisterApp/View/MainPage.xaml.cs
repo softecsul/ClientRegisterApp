@@ -3,6 +3,7 @@ using ClientRegisterApp.View;
 using ClientRegisterApp.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,15 @@ namespace ClientRegisterApp
         public MainPage()
         {
             vm = new MainPageViewModel(new Client());
-            vm.GetAllClients();
+            try
+            {
+                Task.Run(() => vm.GetAllClients()).Wait();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
+
             BindingContext = vm;
             InitializeComponent();
         }

@@ -32,8 +32,8 @@ namespace ClientRegisterApp.Service
         public async Task<IEnumerable<Client>> GetAll()
         {
             List<Client> clients = null;
-            // RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
-            var uri = new Uri(string.Format(Constants.RestURL, string.Empty));
+            // RestUrl = http://developer.xamarin.com:8081/api/
+            var uri = new Uri(string.Format(Constants.RestURL, "Cliente"));
 
             var response = await client.GetAsync(uri);
             if (response.IsSuccessStatusCode)

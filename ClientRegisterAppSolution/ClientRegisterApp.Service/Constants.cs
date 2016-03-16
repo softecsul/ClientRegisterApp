@@ -8,6 +8,6 @@ namespace ClientRegisterApp.Service
 {
     public class Constants
     {
-        public static string RestURL = "http://developer.xamarin.com:8081/api/todoitems{0}";
+        public static string RestURL = "http://localhost:14622/api/{0}";
     }
 }

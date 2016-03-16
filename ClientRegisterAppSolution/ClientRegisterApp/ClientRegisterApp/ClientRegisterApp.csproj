@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="NotifyTaskCompletion.cs" />
     <Compile Include="ViewModel\ClienteAddViewModel.cs" />
     <Compile Include="ViewModel\ClientEditViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />

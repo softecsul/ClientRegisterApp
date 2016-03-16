@@ -25,7 +25,8 @@ namespace ClientRegisterApp.ViewModel
             clientServiceApi = new ClientServiceApi();
         }
 
-        public async void GetAllClients()
+
+        public async Task GetAllClients()
         {
             Clients = new ObservableCollection<Client>(await clientServiceApi.GetAll());
         }
