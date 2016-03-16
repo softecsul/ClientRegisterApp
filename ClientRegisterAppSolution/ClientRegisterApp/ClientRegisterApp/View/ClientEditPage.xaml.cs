@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ClientRegisterApp.Model;
+
 using Xamarin.Forms;
 using ClientRegisterApp.ViewModel;
+using ClientRegisterApp.Data.Models;
 
 namespace ClientRegisterApp.View
 {

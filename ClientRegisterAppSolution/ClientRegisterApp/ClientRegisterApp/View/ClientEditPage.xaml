@@ -5,23 +5,14 @@
   
   <ContentPage.Content>
     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="20">
         <Label Text="Editar Cliente" Font="20"/>
-        <StackLayout Orientation="Horizontal" Padding="30" >
           <Label>Nome: </Label>
           <Entry Placeholder="Seu nome" Text="{Binding Name}" ></Entry>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal" Padding="30">
           <Label HorizontalOptions="Start">Endereço: </Label>
           <Entry Placeholder="Seu endereço" Text="{Binding Address}" ></Entry>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal" Padding="30">
           <Label>Telefone: </Label>
           <Entry Placeholder="Seu telefone" Text="{Binding Phone}" ></Entry>
-        </StackLayout>
-
         <StackLayout Orientation="Vertical" Padding="30">
           <Label>Foto: </Label>
           <Image Source="http://xamarin.com/content/images/pages/forms/example-app.png" />

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace WebApi.Models
 {
@@ -23,6 +24,7 @@ namespace WebApi.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
         }
         
         public static ApplicationDbContext Create()

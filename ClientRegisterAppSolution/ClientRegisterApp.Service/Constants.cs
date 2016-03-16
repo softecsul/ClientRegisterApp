@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClientRegisterApp.Service
 {
-    interface IWebApi<T>
+    public class Constants
     {
-        Task<IEnumerable<T>> GetAll();
-        T Get(int id);
-        bool Insert(T t);
-        bool Update(T t);
-        bool Delete(int id);
+        public static string RestURL = "http://developer.xamarin.com:8081/api/todoitems{0}";
     }
 }

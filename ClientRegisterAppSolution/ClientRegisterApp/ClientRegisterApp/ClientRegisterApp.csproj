@@ -36,7 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Model\Client.cs" />
     <Compile Include="ViewModel\ClienteAddViewModel.cs" />
     <Compile Include="ViewModel\ClientEditViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
@@ -113,6 +112,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ClientRegisterApp.Data\ClientRegisterApp.Data.csproj">
+      <Project>{113b7b35-aa6b-4b5a-ac7d-9d8481f11ee4}</Project>
+      <Name>ClientRegisterApp.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ClientRegisterApp.Service\ClientRegisterApp.Service.csproj">
       <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
       <Name>ClientRegisterApp.Service</Name>
