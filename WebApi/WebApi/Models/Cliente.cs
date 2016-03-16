@@ -11,12 +11,11 @@ namespace WebApi.Models
     public class Cliente
     {
         [Key]
-        public int IDCliente { get; set; }
-        public string Nome { get; set; }
-        public string Telefone { get; set; }
-        //TODO: Possivel Refactoring
-        public string Endereco { get; set; }
-        [Column(TypeName ="image")]
-        public byte[] Imagem { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+        [Column(TypeName = "image")]
+        public byte[] Image { get; set; }
     }
 }
