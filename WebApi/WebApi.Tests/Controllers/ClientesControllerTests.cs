@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace WebApi.Controllers.Tests
 {
@@ -15,6 +17,27 @@ namespace WebApi.Controllers.Tests
     [TestClass()]
     public class ClientesControllerTests
     {
+
+        //[TestMethod()]
+        //public async Task TesteInclusaoCliente()
+        //{
+        //    // Quando é async, não pode retornar void, tem que ser uma task..
+        //    {
+        //        var lstCliente = new Models.Cliente();
+        //        lstCliente.ID = 10;
+        //        lstCliente.Name = "Anderson F da Costa 10";
+        //        lstCliente.Address = "Rua Nilo Peçanha, 81";
+        //        lstCliente.Phone = "49-3333-7777";
+
+        //        //var resincluirCliente = await ctrCliente.PostCliente(lstCliente);
+        //        string Json = JsonConvert.SerializeObject(lstCliente, Formatting.Indented);
+        //        var content = new StringContent(Json, Encoding.UTF8, "application/json");
+        //        content.Headers.Add("Accept", "application/json");
+        //        HttpClient client = new HttpClient();
+        //        await client.PostAsync("http://localhost:14622/api/clientes", content);
+
+        //    }
+        //}
 
         [TestMethod()]
         public async void GetClienteTest()
@@ -34,28 +57,28 @@ namespace WebApi.Controllers.Tests
             }
         }
 
-        [TestMethod()]
-        public void GetClientesTest()
-        {
-            Assert.Fail();
-        }
+        //[TestMethod()]
+        //public void GetClientesTest()
+        //{
+        //    Assert.Fail();
+        //}
 
-        [TestMethod()]
-        public void PutClienteTest()
-        {
-            Assert.Fail();
-        }
+        //[TestMethod()]
+        //public void PutClienteTest()
+        //{
+        //    Assert.Fail();
+        //}
 
-        [TestMethod()]
-        public void PostClienteTest()
-        {
-            Assert.Fail();
-        }
+        //[TestMethod()]
+        //public void PostClienteTest()
+        //{
+        //    Assert.Fail();
+        //}
 
-        [TestMethod()]
-        public void DeleteClienteTest()
-        {
-            Assert.Fail();
-        }
+        //[TestMethod()]
+        //public void DeleteClienteTest()
+        //{
+        //    Assert.Fail();
+        //}
     }
 }
