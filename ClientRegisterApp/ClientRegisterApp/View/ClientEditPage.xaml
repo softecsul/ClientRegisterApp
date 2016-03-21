@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ClientRegisterApp.View.ClientEditPage">
+	<ContentPage.Content>
+		<ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+			<StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="20">
+				<Label Text="Editar Cliente" Font="20" />
+				<Label>Nome: </Label>
+				<Entry Placeholder="Seu nome" Text="{Binding Name}">
+				</Entry>
+				<Label HorizontalOptions="Start">Endereço: </Label>
+				<Entry Placeholder="Seu endereço" Text="{Binding Address}">
+				</Entry>
+				<Label>Telefone: </Label>
+				<Entry Placeholder="Seu telefone" Text="{Binding Phone}">
+				</Entry>
+				<StackLayout Orientation="Vertical" Padding="30">
+					<Label>Foto: </Label>
+					<Image Source="{Binding ImagemSrc}" />
+					<Button Text="Tirar foto" Clicked="OnTakePictureClicked" />
+				</StackLayout>
+				<Button Text="Salvar Alterações" Clicked="BtnSaveCicked" />
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

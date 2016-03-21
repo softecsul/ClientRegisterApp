@@ -18,9 +18,18 @@ namespace WebApi.Controllers
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Clientes
-        public IQueryable<Cliente> GetClientes()
+        public IQueryable<object> GetClientes()
         {
-            return db.Clientes;
+            var clients = db.Clientes.Select(x => new
+            {
+                x.Address,
+                x.ID,
+                x.Info,
+                x.Name,
+                x.Phone
+            });
+
+            return clients;
         }
 
         // GET: api/Clientes/5

@@ -17,5 +17,6 @@ namespace WebApi.Models
         public string Address { get; set; }
         [Column(TypeName = "image")]
         public byte[] Image { get; set; }
+        public string Info { get; set; }
     }
 }
