@@ -9,21 +9,19 @@ using Android.Widget;
 using Android.OS;
 using ClientRegisterApp.ViewModel;
 
+
 namespace ClientRegisterApp.Droid
 {
 	[Activity (Label = "ClientRegisterApp.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
-		public object MyProperty {
-			get;
-			set;
-		}
-
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
+
+			ZXing.Mobile.MobileBarcodeScanner.Initialize (Application);
 
 			//Xamarin Forms
 			LoadApplication (new ClientRegisterApp ());
@@ -36,7 +34,7 @@ namespace ClientRegisterApp.Droid
 				File file = new File (TakePicture.File.Path);
 				byte[] imagemBuffer = Read (file);
 				ClientAddViewModelSingleton.GetInstance ().ChangeImage (TakePicture.File.Path, imagemBuffer);	
-			} else if (requestCode == Constants.EditClientCameraAction && resultCode == Result.Ok) {
+			} else if (requestCode == Constants.EditClientCameraAction && resultCode == Android.App.Result.Ok) {
 
 				File file = new File (TakePicture.File.Path);
 				byte[] imagemBuffer = Read (file);

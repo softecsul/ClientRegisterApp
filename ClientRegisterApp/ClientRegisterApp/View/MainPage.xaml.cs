@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using ZXing.Net;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -32,6 +33,15 @@ namespace ClientRegisterApp
 		public void OnItemTapped (object obj, ItemTappedEventArgs e)
 		{
 			//var client = e.Item as Client;
+		}
+
+		public async void OnClickedReadCode (object obj, EventArgs args)
+		{
+			var scanner = new ZXing.Mobile.MobileBarcodeScanner ();
+			var result = await scanner.Scan ();
+
+			if (result != null)
+				await DisplayAlert ("Info", "Resultado: " + result, "Ok");
 		}
 
 		public void OnClickedAdd (object obj, EventArgs args)

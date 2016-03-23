@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Diagnostics;
+
+using System.Threading.Tasks;
+
+
 using Xamarin.Forms;
+
+
 
 namespace ClientRegisterApp
 {
@@ -18,6 +25,14 @@ namespace ClientRegisterApp
 		protected override void OnStart ()
 		{
 			// Handle when your app starts
+			var wifiManger = DependencyService.Get<IWifiManager> ();
+			var isConnected = wifiManger.ConnectToTarger ();
+			if (isConnected) {
+				Debug.WriteLine ("Conectado!");
+			} else {
+				Debug.WriteLine ("Deu ruim");
+
+			}
 		}
 
 		protected override void OnSleep ()

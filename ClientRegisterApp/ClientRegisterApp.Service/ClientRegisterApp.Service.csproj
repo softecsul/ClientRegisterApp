@@ -47,7 +47,7 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
-      <HintPath>..\..\..\..\..\..\Program Files\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\Profile\Profile111\System.Net.Http.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\Profile\Profile111\System.Net.Http.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

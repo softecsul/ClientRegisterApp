@@ -1,26 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientRegisterApp.MainPage">
-  <ContentPage.Content>
-    <StackLayout Padding="30">
-      <Label Font="30" Text="Clientes"/>
-      <ListView x:Name="ClientsList" ItemsSource="{Binding Clients}" ItemTapped="OnItemTapped">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <ViewCell>
-              <StackLayout>
-                <Label Text="{Binding Name}" Font="12"/>
-              </StackLayout>
-            </ViewCell>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-      <StackLayout Orientation="Horizontal">
-        <Button Text="Adicionar" Clicked="OnClickedAdd"/>
-        <Button Text="Editar" Clicked="OnClickedEdit"/>
-        <Button Text="Excluir" Clicked="OnClickedExclude"/>
-      </StackLayout>
-    </StackLayout>
-  </ContentPage.Content>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ClientRegisterApp.MainPage">
+	<ContentPage.Content>
+		<StackLayout Padding="30">
+			<Label Font="30" Text="Clientes" />
+			<ListView x:Name="ClientsList" ItemsSource="{Binding Clients}" ItemTapped="OnItemTapped">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout>
+								<Label Text="{Binding Name}" Font="12" />
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<StackLayout Orientation="Horizontal">
+				<Button Text="Adicionar" Clicked="OnClickedAdd" />
+				<Button Text="Editar" Clicked="OnClickedEdit" />
+				<Button Text="Excluir" Clicked="OnClickedExclude" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal">
+				<Button Text="Ler Code" Clicked="OnClickedReadCode" />
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>
