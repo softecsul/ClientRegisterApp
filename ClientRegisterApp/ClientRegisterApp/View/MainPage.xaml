@@ -19,8 +19,8 @@
 				<Button Text="Editar" Clicked="OnClickedEdit" />
 				<Button Text="Excluir" Clicked="OnClickedExclude" />
 			</StackLayout>
-			<StackLayout Orientation="Horizontal">
-				<Button Text="Ler Code" Clicked="OnClickedReadCode" />
+			<StackLayout>
+				<Button Text="Ler Código" Clicked="OnClickedReadCode" HorizontalOptions="Fill" />
 			</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>

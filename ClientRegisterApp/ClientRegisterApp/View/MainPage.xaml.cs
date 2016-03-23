@@ -39,7 +39,6 @@ namespace ClientRegisterApp
 		{
 			var scanner = new ZXing.Mobile.MobileBarcodeScanner ();
 			var result = await scanner.Scan ();
-
 			if (result != null)
 				await DisplayAlert ("Info", "Resultado: " + result, "Ok");
 		}
