@@ -54,7 +54,7 @@ namespace ClientRegisterApp.Droid
 			var netid = list.Find (x => x.Ssid.Equals ("\"App\""));
 
 			if (netid == null) {
-				var netId = wifiManager.AddNetwork (wifiConfig);
+				
 				list = new List<WifiConfiguration> (wifiManager.ConfiguredNetworks);
 				netid = list.Find (x => x.Ssid.Equals ("\"App\""));
 			} else {
