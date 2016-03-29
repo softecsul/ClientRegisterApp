@@ -8,6 +8,6 @@ namespace ClientRegisterApp.Service
 {
 	public class Constants
 	{
-		public static string RestURL = "http://192.168.0.227:14622/api/{0}";
+		public static string RestURL = "http://177.126.189.195:56757/api/{0}";
 	}
 }

@@ -14,7 +14,7 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<StackLayout Orientation="Horizontal">
+			<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="30">
 				<Button Text="Adicionar" Clicked="OnClickedAdd" />
 				<Button Text="Editar" Clicked="OnClickedEdit" />
 				<Button Text="Excluir" Clicked="OnClickedExclude" />
