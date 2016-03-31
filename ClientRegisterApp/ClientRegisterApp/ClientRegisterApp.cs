@@ -24,15 +24,6 @@ namespace ClientRegisterApp
 
 		protected override void OnStart ()
 		{
-			// Handle when your app starts
-			var wifiManger = DependencyService.Get<IWifiManager> ();
-			var isConnected = wifiManger.ConnectToTarger ();
-			if (isConnected) {
-				Debug.WriteLine ("Conectado!");
-			} else {
-				Debug.WriteLine ("Deu ruim");
-
-			}
 		}
 
 		protected override void OnSleep ()

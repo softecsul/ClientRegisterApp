@@ -55,6 +55,12 @@
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="MonoTouch.SimplePing">
+      <HintPath>..\..\..\Xamarin Projects KB\MonoTouch.SimplePing-master\Src\MonoTouch.SimplePing\bin\Debug\MonoTouch.SimplePing.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CSharp">
+      <HintPath>..\iOS\obj\iPhone\Debug\build-iphone5.4-9.3\mtouch-cache\Build\Mono.CSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

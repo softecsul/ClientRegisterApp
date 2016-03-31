@@ -14,13 +14,17 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="30">
+			<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 				<Button Text="Adicionar" Clicked="OnClickedAdd" />
 				<Button Text="Editar" Clicked="OnClickedEdit" />
 				<Button Text="Excluir" Clicked="OnClickedExclude" />
 			</StackLayout>
 			<StackLayout>
 				<Button Text="Ler Código" Clicked="OnClickedReadCode" HorizontalOptions="Fill" />
+				<Button Text="Exibir wifi connectada" Clicked="OnClickedShowSsid" HorizontalOptions="Fill" />
+				<Button Text="Exibir tipo de rede atual" Clicked="OnClickedShowCurrentNetwork" HorizontalOptions="Fill" />
+				<Entry x:Name="txtHost" Placeholder="google.com" />
+				<Button Text="Está Trafegando dados" Clicked="OnClickedHasDataTraffic" HorizontalOptions="Fill" />
 			</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>

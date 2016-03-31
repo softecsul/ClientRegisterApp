@@ -20,11 +20,15 @@ namespace ClientRegisterApp
 		public MainPage ()
 		{
 			vm = new MainPageViewModel (new Client ());
+			/*var wifiManger = DependencyService.Get<IWifiManager> ();
+			var type = wifiManger.GetTypeOfConnection ();
+
 			try {
-				Task.Run (() => vm.GetAllClients ()).Wait ();
+				if (type != NetworkStatus.NotReachable)
+					Task.Run ((Func<Task>)vm.GetAllClients).Wait ();
 			} catch (Exception e) {
 				Debug.WriteLine (e);
-			}
+			}*/
 
 			BindingContext = vm;
 			InitializeComponent ();
@@ -77,6 +81,55 @@ namespace ClientRegisterApp
 				}
 			} else
 				await DisplayAlert ("Info", "Por favor, selecione um registro para realizar a operação.", "Ok");
+		}
+
+		public void OnClickedShowSsid (object obj, EventArgs args)
+		{
+			var wifiManger = DependencyService.Get<IWifiManager> ();
+			string ssid;
+			var isConnected = wifiManger.IsConnectedInTargetSsid (out ssid);
+			if (isConnected) {
+				DisplayAlert ("Info", "Conectado a rede alvo: App.", "Ok");
+			} else {
+				DisplayAlert ("Info", "Não conectado a rede alvo, rede conectada: " + ssid, "Ok");
+			}
+		}
+
+		public void OnClickedShowCurrentNetwork (object obj, EventArgs args)
+		{
+			var wifiManger = DependencyService.Get<IWifiManager> ();
+			var type = wifiManger.GetTypeOfConnection ();
+			switch (type) {
+			case NetworkStatus.NotReachable:
+				DisplayAlert ("Info", "Sem internet.", "Ok");
+				break;
+			case NetworkStatus.ReachableViaCarrierDataNetwork:
+				DisplayAlert ("Info", "Conexão via 3G", "Ok");
+				break;
+			case NetworkStatus.ReachableViaWiFiNetwork:
+				DisplayAlert ("Info", "Conexão via Wifi", "Ok");
+				break;
+			}
+		}
+
+		public async void OnClickedHasDataTraffic (object obj, EventArgs args)
+		{
+			int count = 0;
+			string host = txtHost.Text ?? "https://www.google.com.br";
+			x:
+			var wifiManger = DependencyService.Get<IWifiManager> ();
+			var result = await wifiManger.HasNetworkDataTraffic (host);
+
+			if (result && count == 0) {
+				count++;
+				goto x;
+			}
+			if (result) {
+				DisplayAlert ("Info", "Possui trafego de dados", "Ok");
+			} else {
+				DisplayAlert ("Info", "Não possui trafego de dados", "Ok");
+			}
+				
 		}
 	}
 }
